@@ -6,7 +6,7 @@ var Server = mongo.Server,
     BSON = mongo.BSONPure;
  
 var server = new Server('localhost', 27017, {auto_reconnect: true});
-    databaseconnection = new Db('nodsem', server);
+     databaseconnection = new Db('nodsem',server,{safe:true});
  
     databaseconnection.open(function(err, databaseconnection) {
    if(!err) {
@@ -18,5 +18,4 @@ var server = new Server('localhost', 27017, {auto_reconnect: true});
 });
 
 module.exports = databaseconnection;
-
 
